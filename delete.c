@@ -63,7 +63,7 @@ void deleteStudent(struct Student roster[], int *count) {
 
     // No valid IDs / names found in database
     if (found == -1) {
-        printf("[ERROR] Record not found in the system registry.\n");
+        printf("Record not found in the system registry.\n");
         return;
     }
 
