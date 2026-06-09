@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include "student.h"
-void displayStudents(struct student roster[], int count) {
+void displayStudents(struct Student roster[], int count) {
     if (count == 0) {
         printf("\nNo student records to display.\n");
         return;
@@ -30,4 +30,3 @@ void displayStudents(struct student roster[], int count) {
     printf("==========================================\n");
     printf("Total Students: %d\n", count);
 }
-
