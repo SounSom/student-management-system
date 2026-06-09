@@ -42,7 +42,7 @@ int main() {
                 break;
             case 5: displayStudents(student_list, student_count); // Calls function from display.c
                 break;
-            case 6: saveToFile(student_list, student_count); // Calls function from file_handler.c
+            case 6: saveToFile(student_list, student_count); // Calls functions from file_handler.c
                 break;
             default: printf("Invalid choice.\n");
                 break;
