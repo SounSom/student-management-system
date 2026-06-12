@@ -1,5 +1,4 @@
- // Display all data of all student 
-
+// Display all data of all student 
 #include <stdio.h>
 #include "student.h"
 void displayStudents(struct Student roster[], int count) {
@@ -19,7 +18,7 @@ void displayStudents(struct Student roster[], int count) {
         roster[i].gender);
 
         // Print all 3 scores
-        for (int j = 0;j < num_subject; j++) {
+        for (int j = 0; j < num_subject; j++) {
             printf("%.2f ", roster[i].scores[j]);
         }
         printf("| Avg: %.2f | Grade: %s\n",
