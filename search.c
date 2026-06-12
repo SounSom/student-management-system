@@ -25,6 +25,7 @@ void searchStudent(struct Student roster[], int count)
 
         printf("Enter Student ID: ");
         scanf("%d", &id);
+        while (getchar() != '\n');
 
         for (int i = 0; i < count; i++)
         {
