@@ -1,5 +1,4 @@
 // Display all data of all student 
-
 #include <stdio.h>
 #include "student.h"
 void displayStudents(struct Student roster[], int count) {
