@@ -52,11 +52,11 @@ int main() {
             while (getchar() != '\n');    // Clear buffer
             
             switch(choice) {
-                case 1: //addStudent(student_list, &student_count); // Calls function from add.c
+                case 1: addStudent(student_list, &student_count); // Calls function from add.c
                     break;
                 case 2: searchStudent(student_list, student_count); // Calls function from search.c
                     break;
-                case 3: //updateStudent(student_list, student_count); // Calls function from update.c
+                case 3: updateStudent(student_list, student_count); // Calls function from update.c
                     break;
                 case 4: deleteStudent(student_list, &student_count); // Calls function from delete.c
                     break;
