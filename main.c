@@ -15,20 +15,10 @@ int main() {
     int student_count = 0;
     int choice;
 
-    // Preload database
+    //  Preload database
     loadFromFile(student_list, &student_count);
 
-    /*   Temporary data for testing   */
-    student_list[0].id = 101;
-    strcpy(student_list[0].name, "Test Dummy");
-    strcpy(student_list[0].gender, "Male");
-    student_list[0].scores[0] = 85.0;
-    student_list[0].scores[1] = 90.0;
-    student_list[0].scores[2] = 95.0;
-    student_list[0].average = 90.0;
-    strcpy(student_list[0].grade, "A");
-    student_count = 1; 
-
+    //  Option menu
     do {
         clear_screen();
         printf(bold_on "\n==========================================\n");
