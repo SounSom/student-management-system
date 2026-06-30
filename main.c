@@ -19,15 +19,15 @@ int main() {
     loadFromFile(student_list, &student_count);
 
     /*   Temporary data for testing   */
-    student_list[0].id = 101;
-    strcpy(student_list[0].name, "Test Dummy");
-    strcpy(student_list[0].gender, "Male");
-    student_list[0].scores[0] = 85.0;
-    student_list[0].scores[1] = 90.0;
-    student_list[0].scores[2] = 95.0;
-    student_list[0].average = 90.0;
-    strcpy(student_list[0].grade, "A");
-    student_count = 1; 
+    // student_list[0].id = 101;
+    // strcpy(student_list[0].name, "Test Dummy");
+    // strcpy(student_list[0].gender, "Male");
+    // student_list[0].scores[0] = 85.0;
+    // student_list[0].scores[1] = 90.0;
+    // student_list[0].scores[2] = 95.0;
+    // student_list[0].average = 90.0;
+    // strcpy(student_list[0].grade, "A");
+    // student_count = 1; 
 
     do {
         clear_screen();
@@ -44,19 +44,21 @@ int main() {
         printf("Enter operation choice (1-6): ");
         
         if (scanf("%d", &choice) != 1) {    // Checks for number inputs only
-            printf(bold_on "\nInvalid input! Please enter a number!\n" bold_on);
+            printf(bold_on "\nInvalid input! Please enter a number!\n" bold_off);
             choice = 0;
-            while (getchar() != '\n');
+            int c;
+            while ((c = getchar()) != '\n' && c != EOF);
         }
         else {
-            while (getchar() != '\n');    // Clear buffer
+            int c;
+            while ((c = getchar()) != '\n' && c != EOF);    // Clear buffer
             
             switch(choice) {
-                case 1: //addStudent(student_list, &student_count); // Calls function from add.c
+                case 1: addStudent(student_list, &student_count); // Calls function from add.c
                     break;
-                case 2: //searchStudent(student_list, student_count); // Calls function from search.c
+                case 2: searchStudent(student_list, student_count); // Calls function from search.c
                     break;
-                case 3: //updateStudent(student_list, student_count); // Calls function from update.c
+                case 3: updateStudent(student_list, student_count); // Calls function from update.c
                     break;
                 case 4: deleteStudent(student_list, &student_count); // Calls function from delete.c
                     break;
@@ -70,7 +72,8 @@ int main() {
         }
         if (choice != 6) {
             printf("\n" bold_on "Press [ENTER] to return to the main menu..." bold_off);
-            while (getchar() != '\n'); // Wait for Enter key
+            int c;
+            while ((c = getchar()) != '\n' && c != EOF); // Wait for Enter key
         }
     } while(choice != 6);
     return 0;
