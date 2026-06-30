@@ -10,7 +10,7 @@
     #define clear_screen() system("clear")  // Linux/Mac clear command
 #endif
 
-int main() {
+int main(void) {
     struct Student student_list[max_student];   // Max number of students storage list (defined in student.h)
     int student_count = 0;
     int choice;
@@ -34,7 +34,7 @@ int main() {
         printf("Enter operation choice (1-6): ");
         
         if (scanf("%d", &choice) != 1) {    // Checks for number inputs only
-            printf(bold_on "\nInvalid input! Please enter a number!\n" bold_on);
+            printf(bold_on "\nInvalid input! Please enter a number!\n" bold_off);
             choice = 0;
             while (getchar() != '\n');
         }
