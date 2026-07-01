@@ -28,4 +28,8 @@ void displayStudents(struct Student roster[], int count); // display.c
 void saveToFile(struct Student roster[], int count);
 void loadFromFile(struct Student roster[], int *count);
 
+<<<<<<< HEAD
 #endif
+=======
+#endif
+>>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d
