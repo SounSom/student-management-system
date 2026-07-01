@@ -77,4 +77,8 @@ void deleteStudent(struct Student roster[], int *count) {
     // Reduce current registered student counter by 1
     (*count)--;
     printf(bold_on "\nSuccessfully deleted record!\n" bold_off);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d

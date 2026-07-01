@@ -54,3 +54,7 @@ dkms.conf
 
 # debug information files
 *.dwo
+<<<<<<< HEAD
+student.dat
+=======
+>>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d
