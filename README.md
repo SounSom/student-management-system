@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Student Management System
 A modular, file-bound database application designed in C to manage student academic records through a command-line interface.
 
