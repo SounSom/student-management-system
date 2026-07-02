@@ -2,7 +2,6 @@
 #include <string.h>
 #include "student.h"
 
-<<<<<<< HEAD
 // Forward declarations for helper functions
 void searchById(struct Student roster[], int count);
 void searchByName(struct Student roster[], int count);
@@ -25,10 +24,10 @@ void searchStudent(struct Student roster[], int count) {
         if (scanf("%d", &searchChoice) != 1) {
             printf(bold_on "\nInvalid input. Please enter a number.\n" bold_off);
             while (getchar() != '\n');
-            searchChoice = 0; // Invalid choice
+            searchChoice = 0;
             continue;
         }
-        while (getchar() != '\n'); // Clear buffer
+        while (getchar() != '\n');
 
         switch(searchChoice) {
             case 1: searchById(roster, count); break;
@@ -52,11 +51,9 @@ void searchById(struct Student roster[], int count) {
     }
     while (getchar() != '\n');
 
-    // Linear search through array
     int found = 0;
     for (int i = 0; i < count; i++) {
         if (roster[i].id == id) {
-            // Found matching student - display their information
             printf(bold_on "\n=== STUDENT RECORD FOUND ===\n" bold_off);
             printf("ID: %d\n", roster[i].id);
             printf("Name: %s\n", roster[i].name);
@@ -68,7 +65,7 @@ void searchById(struct Student roster[], int count) {
             printf("\nAverage: %.2f\n", roster[i].average);
             printf("Grade: %s\n", roster[i].grade);
             found = 1;
-            break; // Assuming IDs are unique, we can stop after first match
+            break;
         }
     }
 
@@ -87,7 +84,6 @@ void searchByName(struct Student roster[], int count) {
     printf(bold_on "\n=== SEARCH RESULTS FOR \"%s\" ===\n" bold_off, name);
 
     for (int i = 0; i < count; i++) {
-        // strstr looks for the first occurrence of substring
         if (strstr(roster[i].name, name) != NULL) {
             printf("ID: %d | Name: %s | Gender: %s | Avg: %.2f | Grade: %s\n",
                    roster[i].id, roster[i].name, roster[i].gender,
@@ -100,86 +96,3 @@ void searchByName(struct Student roster[], int count) {
         printf(bold_on "\nNo students found matching \"%s\".\n" bold_off, name);
     }
 }
-=======
-void searchStudent(struct Student roster[], int count)
-{
-    if (count == 0)
-    {
-        printf("\nNo students in the database.\n");
-        return;
-    }
-
-    int choice;
-    int found = -1;
-
-    printf("\n===== Search Student =====\n");
-    printf("1. Search by ID\n");
-    printf("2. Search by Name\n");
-    printf("Choose option: ");
-    scanf("%d", &choice);
-
-    if (choice == 1)
-    {
-        int id;
-
-        printf("Enter Student ID: ");
-        scanf("%d", &id);
-        while (getchar() != '\n');
-
-        for (int i = 0; i < count; i++)
-        {
-            if (roster[i].id == id)
-            {
-                found = i;
-                break;
-            }
-        }
-    }
-    else if (choice == 2)
-    {
-        char name[50];
-
-        while (getchar() != '\n');
-
-        printf("Enter Student Name: ");
-        fgets(name, sizeof(name), stdin);
-
-        name[strcspn(name, "\n")] = '\0';
-
-        for (int i = 0; i < count; i++)
-        {
-            if (strcmp(roster[i].name, name) == 0)
-            {
-                found = i;
-                break;
-            }
-        }
-    }
-    else
-    {
-        printf("Invalid option.\n");
-        return;
-    }
-
-    if (found == -1)
-    {
-        printf("\nStudent not found.\n");
-    }
-    else
-    {
-        printf("\n===== Student Information =====\n");
-        printf("ID      : %d\n", roster[found].id);
-        printf("Name    : %s\n", roster[found].name);
-        printf("Gender  : %s\n", roster[found].gender);
-
-        printf("Scores  : ");
-        for (int i = 0; i < num_subject; i++)
-        {
-            printf("%.1f ", roster[found].scores[i]);
-        }
-
-        printf("\nAverage : %.2f\n", roster[found].average);
-        printf("Grade   : %s\n", roster[found].grade);
-    }
-}
->>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d
