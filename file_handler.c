@@ -45,12 +45,8 @@ void loadFromFile(struct Student roster[], int *count) {
 
     // Make sure file count doesn't go over array size (max_student)
     if (file_count > max_student) {
-<<<<<<< HEAD
-        printf("Warning! File has %d reccords, but max is %d. Loading first %d...\n", file_count, max_student, max_student);
-=======
         printf("Warning! File has %d records, but max is %d. Loading first %d...\n", file_count, max_student, max_student);
         file_count = max_student;
->>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d
     }
 
     // Read all student records stored in student.dat
@@ -60,8 +56,4 @@ void loadFromFile(struct Student roster[], int *count) {
     // Close file
     fclose(fptr);
     printf("Successfully loaded %d record(s) from '%s'!\n", file_count, database);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d

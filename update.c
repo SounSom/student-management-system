@@ -2,7 +2,6 @@
 #include <string.h>
 #include "student.h"
 
-<<<<<<< HEAD
 // Forward declarations for helper functions
 void updateName(struct Student roster[], int index);
 void updateGender(struct Student roster[], int index);
@@ -29,33 +28,10 @@ void updateStudent(struct Student roster[], int count) {
     for (int i = 0; i < count; i++) {
         if (roster[i].id == id) {
             index = i;
-=======
-void updateStudent(struct Student roster[], int count)
-{
-
-    if (count == 0)
-    {
-        printf("  [!] No students to update.\n");
-        return;
-    }
-
-    int searchID, i, found = -1;
-    printf("\nEnter Student ID to update: ");
-    scanf("%d", &searchID);
-    while (getchar() != '\n')
-        ;
-
-    for (i = 0; i < count; i++)
-    {
-        if (roster[i].id == searchID)
-        {
-            found = i;
->>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d
             break;
         }
     }
 
-<<<<<<< HEAD
     if (index == -1) {
         printf(bold_on "\nNo student found with ID %d.\n" bold_off, id);
         return;
@@ -99,9 +75,6 @@ void updateStudent(struct Student roster[], int count)
             default: printf(bold_on "\nInvalid choice. Please try again.\n" bold_off);
         }
     } while (updateChoice != 4);
-
-    // Recalculate average and grade if scores were changed
-    // (We'll handle this in the updateScores function or check if needed)
 }
 
 // Helper Functions for Each Field
@@ -164,48 +137,3 @@ void updateScores(struct Student roster[], int index) {
         printf(bold_on "\nScores, average, and grade updated successfully.\n" bold_off);
     }
 }
-=======
-    if (found == -1)
-    {
-        printf("  [!] Student ID %d not found.\n", searchID);
-        return;
-    }
-
-    struct Student *s = &roster[found];
-
-    printf("New Name   (current: %s): ", s->name);
-    fgets(s->name, sizeof(s->name), stdin);
-    s->name[strcspn(s->name, "\n")] = '\0';
-
-    printf("New Gender (current: %s): ", s->gender);
-    fgets(s->gender, sizeof(s->gender), stdin);
-    s->gender[strcspn(s->gender, "\n")] = '\0';
-
-    float total = 0.0f;
-    for (i = 0; i < num_subject; i++)
-    {
-        printf("New Score %d (current: %.2f): ", i + 1, s->scores[i]);
-        scanf("%f", &s->scores[i]);
-        total += s->scores[i];
-    }
-    while (getchar() != '\n')
-        ;
-
-    s->average = total / num_subject;
-
-    if (s->average >= 90.0f)
-        strcpy(s->grade, "A");
-    else if (s->average >= 80.0f)
-        strcpy(s->grade, "B");
-    else if (s->average >= 70.0f)
-        strcpy(s->grade, "C");
-    else if (s->average >= 60.0f)
-        strcpy(s->grade, "D");
-    else
-        strcpy(s->grade, "F");
-
-    printf("\n  [+] Student updated! Avg: %.2f | Grade: %s\n\n",
-           s->average, s->grade);
-}
-
->>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d
