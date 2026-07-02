@@ -10,36 +10,14 @@
     #define clear_screen() system("clear")  // Linux/Mac clear command
 #endif
 
-<<<<<<< HEAD
-int main() {
-=======
 int main(void) {
->>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d
     struct Student student_list[max_student];   // Max number of students storage list (defined in student.h)
     int student_count = 0;
     int choice;
 
-<<<<<<< HEAD
     // Preload database
     loadFromFile(student_list, &student_count);
 
-    /*   Temporary data for testing   */
-    // student_list[0].id = 101;
-    // strcpy(student_list[0].name, "Test Dummy");
-    // strcpy(student_list[0].gender, "Male");
-    // student_list[0].scores[0] = 85.0;
-    // student_list[0].scores[1] = 90.0;
-    // student_list[0].scores[2] = 95.0;
-    // student_list[0].average = 90.0;
-    // strcpy(student_list[0].grade, "A");
-    // student_count = 1; 
-
-=======
-    //  Preload database
-    loadFromFile(student_list, &student_count);
-
-    //  Option menu
->>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d
     do {
         clear_screen();
         printf(bold_on "\n==========================================\n");
@@ -53,24 +31,15 @@ int main(void) {
         printf(" 6. Commit Changes & Exit\n");
         printf(bold_on "==========================================\n" bold_off);
         printf("Enter operation choice (1-6): ");
-        
+
         if (scanf("%d", &choice) != 1) {    // Checks for number inputs only
             printf(bold_on "\nInvalid input! Please enter a number!\n" bold_off);
             choice = 0;
-<<<<<<< HEAD
-            int c;
-            while ((c = getchar()) != '\n' && c != EOF);
-        }
-        else {
-            int c;
-            while ((c = getchar()) != '\n' && c != EOF);    // Clear buffer
-=======
             while (getchar() != '\n');
         }
         else {
             while (getchar() != '\n');    // Clear buffer
->>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d
-            
+
             switch(choice) {
                 case 1: addStudent(student_list, &student_count); // Calls function from add.c
                     break;
@@ -90,17 +59,8 @@ int main(void) {
         }
         if (choice != 6) {
             printf("\n" bold_on "Press [ENTER] to return to the main menu..." bold_off);
-<<<<<<< HEAD
-            int c;
-            while ((c = getchar()) != '\n' && c != EOF); // Wait for Enter key
-        }
-    } while(choice != 6);
-    return 0;
-}
-=======
             while (getchar() != '\n'); // Wait for Enter key
         }
     } while(choice != 6);
     return 0;
 }
->>>>>>> de18caa5c7f9f6cf707b06ffcef9e66dbd74542d
