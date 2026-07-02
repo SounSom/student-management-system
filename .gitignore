@@ -54,4 +54,8 @@ dkms.conf
 
 # debug information files
 *.dwo
+# Project database
 student.dat
+
+# Unix binary (from make)
+sms
